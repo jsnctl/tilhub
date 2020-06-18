@@ -6,8 +6,8 @@
 		- [x] Text
 		- [ ] Link representation
 		- [ ] Metadata
-	- [x] API and CRUD app
-		- [ ] `GET` TILs
+	- [ ] API and CRUD app
+		- [x] `GET` TILs
 		- [ ] `POST` new TIL
 	- [ ] Basic frontend
 - [ ] Multi-tenancy
