@@ -1,11 +1,13 @@
 # tilhub
 
-- [ ] `tilhub.dev` acquired
+- [x] `tilhub.dev` acquired
 - [ ] Single user TIL backend
-	- [ ] Database of TILs
-		- [ ] Text
+	- [x] Database of TILs
+		- [x] Text
 		- [ ] Link representation
 		- [ ] Metadata
-	- [ ] API and CRUD app
+	- [x] API and CRUD app
+		- [ ] `GET` TILs
+		- [ ] `POST` new TIL
 	- [ ] Basic frontend
 - [ ] Multi-tenancy
