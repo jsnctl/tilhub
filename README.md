@@ -11,3 +11,6 @@
 		- [ ] `POST` new TIL
 	- [ ] Basic frontend
 - [ ] Multi-tenancy
+	- [x] Data concept of user
+	- [x] Salted and hashed passwording
+	- ...
