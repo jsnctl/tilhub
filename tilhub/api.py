@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from extensions import db, api
-from endpoints.til_endpoint import TILEndpoint
+from endpoints.til_endpoint import (TILGetEndpoint, TILPostEndpoint)
 from endpoints.auth_endpoint import AuthEndpoint
 from config import Config
 
@@ -18,7 +18,8 @@ def create_app():
     cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
     api.add_resource(AuthEndpoint, '/auth')
-    api.add_resource(TILEndpoint, '/til/<id>')
+    api.add_resource(TILGetEndpoint, '/til/<til_id>')
+    api.add_resource(TILPostEndpoint, '/til')
 
     api.init_app(app)
     db.init_app(app)
