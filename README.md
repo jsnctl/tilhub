@@ -8,7 +8,8 @@
 		- [ ] Metadata
 	- [ ] API and CRUD app
 		- [x] `GET` TILs
-		- [ ] `POST` new TIL
+		- [x] `POST` new TIL
+		- [ ] Authentication, @login
 	- [ ] Basic frontend
 - [ ] Multi-tenancy
 	- [x] Data concept of user
