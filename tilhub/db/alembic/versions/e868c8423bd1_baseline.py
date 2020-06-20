@@ -25,6 +25,16 @@ def upgrade():
         sa.Column('til', sa.String())
     )
 
+    op.create_table(
+        'users',
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('username', sa.String(100), nullable=False, unique=True),
+        sa.Column('password', sa.String(200), nullable=False),
+        sa.Column('email', sa.String(200), nullable=False),
+        sa.Column('date_created', sa.DateTime, default=sa.func.now())
+    )
+
 
 def downgrade():
     op.drop_table('todayilearned')
+    op.drop_table('users')
