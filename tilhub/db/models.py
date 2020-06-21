@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from sqlalchemy import Column, DateTime, String, Integer, func
 from extensions import db
+from sqlalchemy.orm import relationship, backref
 
 
 @dataclass
@@ -31,3 +32,10 @@ class User(db.Model):
     email = Column(String(100), nullable=False)
     password = Column(String(200), nullable=False)
     date_created = Column(DateTime, default=func.now())
+
+
+class Tag(db.Model):
+    __tablename__ = 'tags'
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    til_id = Column(Integer)
