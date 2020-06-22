@@ -4,6 +4,7 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
+from config import Config as tilmine_config
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -23,6 +24,12 @@ target_metadata = None
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
+
+db_username = tilmine_config.config['database']['username']
+db_password = tilmine_config.config['database']['password']
+db_uri = "postgres://{0}:{1}@localhost:5432/tilmine".format(db_username,
+                                                             db_password)
+config.set_main_option('sqlalchemy.url', db_uri)
 
 
 def run_migrations_offline():

@@ -6,7 +6,7 @@ from endpoints.auth_endpoint import AuthEndpoint
 from config import Config
 
 config = Config().config
-DATABASE_URL = "postgres://{0}:{1}@localhost:5432/tilhub".format(
+DATABASE_URL = "postgres://{0}:{1}@localhost:5432/tilmine".format(
     config['database']['username'],
     config['database']['password']
 )
