@@ -1,6 +1,6 @@
-# tilhub
+# tilmine
 
-- [x] `tilhub.dev` acquired
+- [x] ~`tilhub.dev`~ `tilmine.co` acquired
 - [ ] Single user TIL backend
 	- [x] Database of TILs
 		- [x] Text
