@@ -1,8 +1,12 @@
 import yaml
+from pathlib import Path
 
+TILMINE_ROOT = str(Path(__file__).parent)
+print(TILMINE_ROOT)
 
 def _init_config():
-    config = yaml.load(open("./config.yaml", "rb"), Loader=yaml.FullLoader)
+    config = yaml.load(open(TILMINE_ROOT + "/config.yaml", "rb"),
+                       Loader=yaml.FullLoader)
     return config
 
 
