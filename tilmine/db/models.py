@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from sqlalchemy import Column, DateTime, String, Integer, func
 from extensions import db
-from sqlalchemy.orm import relationship, backref
 
 
 @dataclass
