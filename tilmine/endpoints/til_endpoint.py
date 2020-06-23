@@ -22,10 +22,8 @@ class TILSearchByTagEndpoint(Resource):
     def post(self):
         args = parser.parse_args()
         tags = args['tags']
+        tils = controller.get_tils_by_tags(tags)
 
-        tils = []
-        for tag in tags:
-            tils.append(controller.get_tils_by_tag(tag))
         return jsonify(tils)
 
 
