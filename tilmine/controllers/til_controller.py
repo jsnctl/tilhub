@@ -34,6 +34,11 @@ class TILController:
 
         return list(chain(*tils))
 
+    def get_tils_by_user(self, user: str):
+        result = TodayILearned.query.filter_by(user=user).all()
+        return result
+
+
     def add_til(self, user, til, tag_names):
 
         try:

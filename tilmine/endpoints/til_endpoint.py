@@ -27,6 +27,16 @@ class TILSearchByTagEndpoint(Resource):
         return jsonify(tils)
 
 
+class TILSearchByUserEndpoint(Resource):
+
+    def post(self):
+        args = parser.parse_args()
+        tags = args['user']
+        tils = controller.get_tils_by_user(tags)
+
+        return jsonify(tils)
+
+
 class TILPostEndpoint(Resource):
 
     def post(self):
