@@ -1,7 +1,10 @@
 from flask import Flask
 from flask_cors import CORS
 from extensions import db, api
-from endpoints.til_endpoint import (TILGetEndpoint, TILPostEndpoint, TILSearchByTagEndpoint)
+from endpoints.til_endpoint import (TILGetEndpoint,
+                                    TILPostEndpoint,
+                                    TILSearchByTagEndpoint,
+                                    TILSearchByUserEndpoint)
 from endpoints.auth_endpoint import AuthEndpoint
 from config import Config
 
@@ -19,7 +22,10 @@ def create_app():
 
     api.add_resource(AuthEndpoint, '/auth')
     api.add_resource(TILGetEndpoint, '/til/<til_id>')
+
     api.add_resource(TILSearchByTagEndpoint, '/til/search/tags')
+    api.add_resource(TILSearchByUserEndpoint, '/til/search/user')
+
     api.add_resource(TILPostEndpoint, '/til')
 
     api.init_app(app)
