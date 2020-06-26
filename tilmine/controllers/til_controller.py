@@ -38,11 +38,10 @@ class TILController:
         result = TodayILearned.query.filter_by(user=user).all()
         return result
 
-
     def add_til(self, user, til, tag_names):
 
         try:
-            til = TodayILearned(user=user, til=til)
+            til = TodayILearned(user=user, til=til, display_tags=tag_names)
             db.session.add(til)
             db.session.flush()
 
