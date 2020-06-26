@@ -12,20 +12,20 @@
 		- [ ] Authentication, @login
 			- [x] Basic data model
 			- [ ] Endpoints secured by auth
-	- [ ] Basic frontend (`tilmine-frontend`)
-		- [x] React app
-		- [ ] Display TILs
-			- [x] List all TILs from request
-			- [ ] Define TIL display format
-			- [ ] Define TIL results collection
-			- [ ] Markdown support
-		- [ ] Tag search
-			- [x] Basic results from endpoint
-			- [ ] Tags as a TIL attribute
-			- [ ] Discrete tags
-		- [ ] Basic "mine" search
-			- [x] Hardcoded
-			- [ ] "Mine" based on auth'd user
+- [ ] Basic frontend (`tilmine-frontend`)
+	- [x] React app
+	- [ ] Display TILs
+		- [x] List all TILs from request
+		- [ ] Define TIL display format
+		- [ ] Define TIL results collection
+		- [ ] Markdown support
+	- [ ] Tag search
+		- [x] Basic results from endpoint
+		- [ ] Tags as a TIL attribute
+		- [ ] Discrete tags
+	- [ ] Basic "mine" search
+		- [x] Hardcoded
+		- [ ] "Mine" based on auth'd user
 - [ ] Multi-tenancy
 	- [x] Data concept of user
 	- [x] Salted and hashed passwording
