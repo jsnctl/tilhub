@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from sqlalchemy import Column, DateTime, String, Integer, func
+from sqlalchemy.dialects.postgresql import ARRAY
 from extensions import db
 
 
@@ -10,12 +11,14 @@ class TodayILearned(db.Model):
     added: str
     user: str
     til: str
+    display_tags: list
 
     __tablename__ = 'todayilearned'
     id = Column(Integer, primary_key=True)
     added = Column(DateTime, default=func.now())
     user = Column(String)
     til = Column(String)
+    display_tags = Column(ARRAY(String))
 
 
 @dataclass
