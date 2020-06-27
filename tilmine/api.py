@@ -5,7 +5,8 @@ from endpoints.til_endpoint import (TILGetEndpoint,
                                     TILPostEndpoint,
                                     TILSearchByTagEndpoint,
                                     TILSearchByUserEndpoint)
-from endpoints.auth_endpoint import AuthEndpoint
+from endpoints.auth_endpoint import (SignupEndpoint,
+                                     LoginEndpoint)
 from config import Config
 
 config = Config().config
@@ -18,14 +19,15 @@ DATABASE_URL = "postgres://{0}:{1}@localhost:5432/tilmine".format(
 def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
+
     cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
-    api.add_resource(AuthEndpoint, '/auth')
-    api.add_resource(TILGetEndpoint, '/til/<til_id>')
+    api.add_resource(SignupEndpoint, '/auth/signup')
+    api.add_resource(LoginEndpoint, '/auth/login')
 
+    api.add_resource(TILGetEndpoint, '/til/<til_id>')
     api.add_resource(TILSearchByTagEndpoint, '/til/search/tags')
     api.add_resource(TILSearchByUserEndpoint, '/til/search/user')
-
     api.add_resource(TILPostEndpoint, '/til')
 
     api.init_app(app)

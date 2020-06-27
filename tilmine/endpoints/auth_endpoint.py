@@ -1,6 +1,7 @@
 from flask import jsonify
 from flask_restful import Resource, reqparse
 from controllers.auth_controller import AuthController
+from werkzeug.security import safe_str_cmp
 
 controller = AuthController()
 
@@ -10,11 +11,11 @@ parser.add_argument("password")
 parser.add_argument("email")
 
 
-class AuthEndpoint(Resource):
+class SignupEndpoint(Resource):
 
     def post(self):
         args = parser.parse_args()
-        result = controller.add_user(user=args['username'],
+        result = controller.add_user(username=args['username'],
                                      password=args['password'],
                                      email=args['email'])
 
@@ -22,3 +23,16 @@ class AuthEndpoint(Resource):
             return jsonify("Error creating user")
 
         return jsonify(result)
+
+
+class LoginEndpoint(Resource):
+
+    def post(self):
+        args = parser.parse_args()
+
+        if controller.attempt_login(args['username'], args['password']):
+            return jsonify("Success!")
+
+        return jsonify("Wrong username or password")
+
+
