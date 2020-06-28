@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-from extensions import db, api
+from extensions import db, api, jwt
 from endpoints.til_endpoint import (TILGetEndpoint,
                                     TILPostEndpoint,
                                     TILSearchByTagEndpoint,
@@ -32,6 +32,9 @@ def create_app():
 
     api.init_app(app)
     db.init_app(app)
+    jwt.init_app(app)
+
+    app.secret_key = config['jwt_secret']
 
     return app
 

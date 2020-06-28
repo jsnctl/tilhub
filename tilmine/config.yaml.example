@@ -2,3 +2,4 @@ database:
   username:
   password:
 salt:
+jwt_secret:
