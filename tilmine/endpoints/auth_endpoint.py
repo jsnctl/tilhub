@@ -1,7 +1,7 @@
 from flask import jsonify
+from flask_jwt_extended import jwt_refresh_token_required, get_jwt_identity, create_access_token
 from flask_restful import Resource, reqparse
 from controllers.auth_controller import AuthController
-from werkzeug.security import safe_str_cmp
 
 controller = AuthController()
 
@@ -30,9 +30,25 @@ class LoginEndpoint(Resource):
     def post(self):
         args = parser.parse_args()
 
-        if controller.attempt_login(args['username'], args['password']):
-            return jsonify("Success!")
+        login_attempt = controller.attempt_login(args['username'], args['password'])
+
+        if login_attempt:
+            return jsonify(login_attempt)
 
         return jsonify("Wrong username or password")
+
+
+class TokenRefreshEndpoint(Resource):
+
+    @jwt_refresh_token_required
+    def post(self):
+        user = get_jwt_identity()
+        access_token = create_access_token(identity=user)
+
+        return jsonify({
+            "access_token": access_token
+        })
+
+
 
 
