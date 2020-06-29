@@ -21,7 +21,7 @@
 		- [ ] Markdown support
 	- [ ] Tag search
 		- [x] Basic results from endpoint
-		- [ ] Tags as a TIL attribute
+		- [x] Tags as a TIL attribute
 		- [ ] Multi-tag support
 		- [ ] Discrete tags
 	- [ ] Basic "mine" search
