@@ -20,7 +20,7 @@ class TILGetEndpoint(Resource):
 
 class TILSearchByTagEndpoint(Resource):
 
-    @jwt_required
+
     def post(self):
         args = parser.parse_args()
         tags = args['tags']
@@ -31,6 +31,7 @@ class TILSearchByTagEndpoint(Resource):
 
 class TILSearchByUserEndpoint(Resource):
 
+    @jwt_required
     def post(self):
         args = parser.parse_args()
         tags = args['user']
@@ -41,6 +42,7 @@ class TILSearchByUserEndpoint(Resource):
 
 class TILPostEndpoint(Resource):
 
+    @jwt_required
     def post(self):
         args = parser.parse_args()
         result = controller.add_til(user=args['user'],
