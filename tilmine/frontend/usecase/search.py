@@ -22,4 +22,4 @@ def tag_search(form_search):
 
 def _process_tags(query):
     tags = query.split(',')
-    return [tag for tag in tags]
+    return [tag.replace(' ', '') for tag in tags]
