@@ -1,15 +1,18 @@
 import logging
 from flask import Flask, render_template, request
 from tilmine.frontend.forms import TILSearch
+from tilmine.config import Config
 import requests
 
 
 logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
+SERVER = Config.config['server']
+PORTS = Config.config['ports']
+
 
 @app.route("/", methods=['GET', 'POST'])
-@app.route("/home")
 def home():
 
     search = TILSearch(request.form)
@@ -17,13 +20,13 @@ def home():
     if request.method == 'POST':
         tils = search_results(search)
 
-    return render_template("home.html", posts=tils, form=search)
+    return render_template("tils.html", posts=tils, form=search)
 
 
 def search_results(search):
     query = search.data['search']
 
-    tils = requests.post("http://localhost:5000/til/search/tags",
+    tils = requests.post("http://{0}:{1}/til/search/tags".format(SERVER, PORTS['api']),
                          json={"tags": "{0}".format(query)},
                          headers={'content-type': 'application/json'}).json()
 

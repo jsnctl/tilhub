@@ -44,20 +44,16 @@
                 <form method="post">
                   <dl>
                       <p>
+                    {{ form.search.label(id="search") }}
                     {{ render_field(form.search) }}
                   </p></dl>
-                  <p><input type="submit" value="Search">
-                </p></form>
+                </form>
             </center>
           </div>
 
           <br/><br/>
 
-<!--      <div class="row">-->
-<!--        <div class="col-md-8">-->
           {% block content %}{% endblock %}
-<!--        </div>-->
-<!--      </div>-->
 
 
 </body>
