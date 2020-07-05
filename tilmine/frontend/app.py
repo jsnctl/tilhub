@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 from tilmine.frontend.forms import TILSearch
 from tilmine.config import Config
 import requests
+from tilmine.frontend.usecase.search import tag_search
 
 
 logger = logging.getLogger(__name__)
@@ -18,7 +19,7 @@ def home():
     search = TILSearch(request.form)
     tils = []
     if request.method == 'POST':
-        tils = search_results(search)
+        tils = tag_search(search)
 
     return render_template("tils.html", posts=tils, form=search)
 
@@ -31,7 +32,6 @@ def search_results(search):
                          headers={'content-type': 'application/json'}).json()
 
     return tils
-
 
 
 if __name__ == '__main__':
