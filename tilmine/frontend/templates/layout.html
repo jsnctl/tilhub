@@ -12,6 +12,7 @@
     {% endif %}
 </head>
 <body>
+        {% from "_formhelpers.html" import render_field %}
           <div style="width:100%;display:table">
               <div style="width:30%;display:table-cell"></div>
 
@@ -21,31 +22,19 @@
               <div style="width:30%;display:table-cell">
                   <div>
                     <div style="text-align:center"}}>
-                        <form>
-                            <input type="image" src="/static/signup.png"
-                                   height="32px"/><br/>
-                            <input type="username"
-                                name="username"
-                                placeholder="username"
-                                required/><br/>
-                            <input type="password"
-                                name="password"
-                                placeholder="password"
-                                required/><br/>
-                            <button type="submit">Login</button>
-                        </form>
+                        <input type="image" src="/static/signup.png"
+                                   height="32px"/>
                     </div>
                   </div>
               </div>
           </div>
           <div>
               <center>
-              {% from "_formhelpers.html" import render_field %}
                 <form method="post">
                   <dl>
                       <p>
-                    {{ form.search.label(id="search") }}
-                    {{ render_field(form.search) }}
+                    {{ search_form.search.label(id="search") }}
+                    {{ render_field(search_form.search) }}
                   </p></dl>
                 </form>
             </center>

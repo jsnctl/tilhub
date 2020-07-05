@@ -1,4 +1,4 @@
-from wtforms import Form, StringField, PasswordField
+from wtforms import Form, StringField, PasswordField, SubmitField
 
 
 class TILSearch(Form):
@@ -10,3 +10,4 @@ class TILSearch(Form):
 class Login(Form):
     username = StringField('')
     password = PasswordField('')
+    submit = SubmitField()

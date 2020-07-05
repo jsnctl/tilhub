@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">}
+</head>
+<body>
+        {% from "_formhelpers.html" import render_field %}
+          <div>
+              <center>
+                <form method="post">
+                  <dl>
+                      <p>
+                    {{ render_field(form.username) }}
+                    {{ render_field(form.password) }}
+                    {{ render_field(form.submit) }}
+                  </p></dl>
+                </form>
+            </center>
+          </div>
+          {% block content %}{% endblock %}
+</body>
+</html>
