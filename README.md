@@ -12,8 +12,8 @@
 		- [ ] Authentication, @login
 			- [x] Basic data model
 			- [ ] Endpoints secured by auth
-- [ ] Basic frontend (`tilmine-frontend`)
-	- [x] React app
+- [ ] Basic frontend (`frontend`)
+	- [x] ~React app~ Flask web app
 	- [ ] Display TILs
 		- [x] List all TILs from request
 		- [ ] Define TIL display format
@@ -22,7 +22,7 @@
 	- [ ] Tag search
 		- [x] Basic results from endpoint
 		- [x] Tags as a TIL attribute
-		- [ ] Multi-tag support
+		- [x] Multi-tag support
 		- [ ] Discrete tags
 	- [ ] Basic "mine" search
 		- [x] Hardcoded
