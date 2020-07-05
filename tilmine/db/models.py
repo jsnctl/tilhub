@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from sqlalchemy import Column, DateTime, String, Integer, func
 from sqlalchemy.dialects.postgresql import ARRAY
-from extensions import db
+from tilmine.api.extensions import db
 
 
 @dataclass

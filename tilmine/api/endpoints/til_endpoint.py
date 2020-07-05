@@ -1,6 +1,6 @@
 from flask import jsonify
 from flask_restful import Resource, reqparse
-from controllers.til_controller import TILController
+from tilmine.api.controllers.til_controller import TILController
 from flask_jwt_extended import jwt_required
 
 controller = TILController()
@@ -19,7 +19,6 @@ class TILGetEndpoint(Resource):
 
 
 class TILSearchByTagEndpoint(Resource):
-
 
     def post(self):
         args = parser.parse_args()

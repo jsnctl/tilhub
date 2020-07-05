@@ -1,13 +1,13 @@
 from flask import Flask
 from flask_cors import CORS
-from extensions import db, api, jwt
-from endpoints.til_endpoint import (TILGetEndpoint,
-                                    TILPostEndpoint,
-                                    TILSearchByTagEndpoint,
-                                    TILSearchByUserEndpoint)
-from endpoints.auth_endpoint import (SignupEndpoint,
-                                     LoginEndpoint)
-from config import Config
+from tilmine.api.extensions import db, api, jwt
+from tilmine.api.endpoints.til_endpoint import (TILGetEndpoint,
+                                                TILPostEndpoint,
+                                                TILSearchByTagEndpoint,
+                                                TILSearchByUserEndpoint)
+from tilmine.api.endpoints.auth_endpoint import (SignupEndpoint,
+                                                 LoginEndpoint)
+from tilmine.config import Config
 
 config = Config().config
 DATABASE_URL = "postgres://{0}:{1}@localhost:5432/tilmine".format(

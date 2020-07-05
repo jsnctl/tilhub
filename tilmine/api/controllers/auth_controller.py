@@ -1,8 +1,8 @@
-from db.models import User
+from tilmine.db.models import User
 from hashlib import md5
 import logging
-from extensions import db
-from config import Config
+from tilmine.api.extensions import db
+from tilmine.config import Config
 from sqlalchemy.exc import SQLAlchemyError
 from werkzeug.security import safe_str_cmp
 from flask_jwt_extended import create_access_token, create_refresh_token

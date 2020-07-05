@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div style="width:100%;display:table;">
+        <div style="width:20%;display:table-cell"></div>
+        <div style="width:60%;display:table-cell">
+    {% for post in posts %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align:justify;"}>{{post.til}}</h5>
+                <h6 className="card-title">{{post.user}} - {{post.added}}</h6>
+            </div>
+        </div>
+    {% endfor %}
+            </div>
+        <div style="width:20%;display:table-cell"></div>
+    </div>
+{% endblock content %}
+
+

@@ -7,7 +7,5 @@ setup(
 
     author='J. J. A. Costello',
 
-    packages=find_packages(where='tilmine'),
-    package_dir={'tilmine': 'tilmine'},
-    package_data={'tilmine': '*.yaml'}
+    packages=find_packages()
 )

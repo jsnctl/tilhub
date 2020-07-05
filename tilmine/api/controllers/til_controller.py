@@ -1,7 +1,7 @@
-from db.models import TodayILearned, Tag
+from tilmine.db.models import TodayILearned, Tag
 import logging
-from extensions import db
-from config import Config
+from tilmine.api.extensions import db
+from tilmine.config import Config
 from sqlalchemy.exc import SQLAlchemyError
 from itertools import chain
 
